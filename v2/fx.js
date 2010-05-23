@@ -264,7 +264,7 @@
 				var parts = str.split('-'), camel = parts[0];
 				if(parts.length > 1){
 					for(var i=1, len=parts.length; i < len; i++){
-							camel += parts[i].charAt(0).toUpperCase() + parts[i].substring(1);
+						camel += parts[i].charAt(0).toUpperCase() + parts[i].substring(1);
 					}
 				}
 				return cache[str] = camel;

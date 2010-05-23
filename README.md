@@ -12,7 +12,7 @@ FX
 * Supports IE6+, FF, Opera, Safari, and Chrome
 * No browser detection
 
-For more information regarding the latest version of FX, please visit the blog post located here: 
+For more information regarding the latest version of FX, please visit the blog post located here:
 <http://ryanmorr.com/archives/fx-2-0-the-full-featured-animation-framework>
 
 ### License ###

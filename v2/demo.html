@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Ryan Morr - FX v2.0 Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+#box {
+	width:10em;
+	height:30%;
+	border:1px solid black;
+	position:absolute;
+	left:20ex;
+	top:100px;
+	background-color:#0000FF;
+}
+</style>
+<script type="text/javascript" src="http://ryanmorr.com/modules/fx2/fx.js"></script>
+<script type="text/javascript" src="http://ryanmorr.com/modules/fx2/transitions.js"></script>
+<script>
+
+function rand(min,max){
+	return Math.round(min+(Math.random()*(max-min)));
+};
+
+var easing = ['linear', 'easeIn', 'easeOut', 'easeInOut', 'bounceIn', 'backIn', 'elasticIn', 'elasticOut', 'elasticBoth',
+			  'backOut', 'backBoth', 'bounceOut', 'bounceBoth', 'circIn', 'circOut', 'circInOut', 'expoIn', 'expoOut', 'expoInOut',
+			  'quintIn', 'quintOut', 'quintInOut', 'quartIn', 'quartOut', 'quartInOut', 'cubicIn', 'cubicOut', 'cubicInOut',
+			  'quadIn', 'quadOut', 'quadInOut'];
+
+function animate(){
+	
+	var fx = new FX('box', {
+		top: {to: rand(0, 300)},
+		left: {to: rand(0, 40), units: 'ex'},
+		width: {to: rand(10, 40), units: 'em'}, 
+		height: {to: rand(10, 60), units: '%'},
+		backgroundColor: {to: "rgb("+rand(0, 255)+", "+rand(0, 255)+", "+rand(0, 255)+")"}
+	}, 1, easing[rand(0, easing.length - 1)]);
+	
+	fx.start();
+		
+}
+</script>
+</head>
+
+<body>
+
+<button onclick="animate()">Go</button>
+
+<div id="box"></div>
+
+<pre style="position:absolute; bottom:30px; right:80px; border:1px solid #CCC; padding:15px; width:705px; background-color:#FFFFFF; z-index:10">
+var fx = new FX('box', {
+	top: {to: rand(0, 300)},
+	left: {to: rand(0, 40), units: 'ex'},
+	width: {to: rand(10, 40), units: 'em'}, 
+	height: {to: rand(10, 60), units: '%'},
+	backgroundColor: {to: "rgb("+rand(0, 255)+", "+rand(0, 255)+", "+rand(0, 255)+")"}
+}, 1, easing[rand(0, easing.length - 1)]);
+
+fx.start();
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+#box {
+	width:100px;
+	height:100px;
+	border:1px solid black;
+	position:absolute;
+	left:100px;
+	top:100px;
+	background-color:#FF0000;
+}
+</style>
+<script type="text/javascript" src="fx.js"></script>
+<script>
+function rand(min,max){
+	return Math.round(min+(Math.random()*(max-min)));
+};
+
+function animate(){
+	
+	var fx = new FX('box', {
+		top: {to: rand(0, (self.innerHeight || (document.documentElement.clientHeight || document.body.clientHeight)) - 300)},
+		left: {to: rand(0, (self.innerWidth || (document.documentElement.clientWidth || document.body.clientWidth)) - 300)},
+		width: {to: rand(10, 300)}, 
+		height: {to: rand(10, 300)},
+		'background-color': {to: "rgb("+rand(0, 255)+", "+rand(0, 255)+", "+rand(0, 255)+")"}
+	}, 1.5);
+	
+	fx.start();
+
+}
+</script>
+</head>
+
+<body>
+
+<button onclick="animate()">Go</button>
+
+<div id="box"></div>
+
+</body>
+</html>

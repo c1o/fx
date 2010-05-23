@@ -1,6 +1,4 @@
-A lightweight and standalone JavaScript library for animation and effects. 
-Perform a tween on almost all CSS properties including colors and scrolling. 
-Includes transitional easing for smooth animations and an optional callback.
+A lightweight and standalone JavaScript library for animation and effects. Perform a tween on almost all CSS properties including colors and scrolling. Includes transitional easing for smooth animations and an optional callback.
 
 Home:
 http://ryanmorr.com

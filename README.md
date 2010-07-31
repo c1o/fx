@@ -17,4 +17,4 @@ For more information regarding the latest version of FX, please visit the blog p
 
 ### License ###
 
-FX is is licensed under the terms of the MIT License, see the included license.txt file.
+FX is licensed under the terms of the MIT License, see the included license.txt file.

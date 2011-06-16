@@ -29,7 +29,7 @@ FX.Node
 #### A drop-in plugin that makes it simple to create and queue animations for a single element ####
 
 * Queue animations
-* Helpers methods include fadeIn, fadeOut, highlight, move, and scale
+* Helper methods include animate, fadeIn, fadeOut, highlight, move, and scale
 * Utility methods include isAnimating and stop
 
 #### Usage ####

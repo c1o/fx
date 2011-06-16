@@ -1,64 +1,69 @@
 <html>
 <head>
-<title>Ryan Morr - FX v2.0 Example</title>
+<title>Ryan Morr - FX v3.0 Example</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <style>
 #box {
-	width:10em;
-	height:30%;
+	width:100px;
+	height:100px;
 	border:1px solid black;
 	position:absolute;
-	left:20ex;
+	left:20px;
 	top:100px;
 	background-color:#0000FF;
 }
 </style>
 <script type="text/javascript" src="fx.js"></script>
-<script type="text/javascript" src="transitions.js"></script>
+<script type="text/javascript" src="node.js"></script>
 <script>
+
+var node;
 
 function rand(min,max){
 	return Math.round(min+(Math.random()*(max-min)));
-};
-
-var easing = ['linear', 'easeIn', 'easeOut', 'easeInOut', 'bounceIn', 'backIn', 'elasticIn', 'elasticOut', 'elasticBoth',
-			  'backOut', 'backBoth', 'bounceOut', 'bounceBoth', 'circIn', 'circOut', 'circInOut', 'expoIn', 'expoOut', 'expoInOut',
-			  'quintIn', 'quintOut', 'quintInOut', 'quartIn', 'quartOut', 'quartInOut', 'cubicIn', 'cubicOut', 'cubicInOut',
-			  'quadIn', 'quadOut', 'quadInOut'];
-
-function animate(){
-	
-	var fx = new FX('box', {
-		top: {to: rand(0, 300)},
-		left: {to: rand(0, 40), units: 'ex'},
-		width: {to: rand(10, 40), units: 'em'}, 
-		height: {to: rand(10, 60), units: '%'},
-		backgroundColor: {to: "rgb("+rand(0, 255)+", "+rand(0, 255)+", "+rand(0, 255)+")"}
-	}, 1, easing[rand(0, easing.length - 1)]);
-	
-	fx.start();
-		
 }
+
+function animate(mode){
+	node = node || new FX.Node('box');
+	switch(mode){
+		case 1:
+			node.fadeIn();
+			break;
+		case 2:
+			node.fadeOut();
+			break;
+		case 3:
+			node.highlight();
+			break;
+		case 4:
+			node.move(rand(10, 400), rand(100, 400));
+			break;
+		case 5:
+			node.scale(rand(10, 400), rand(10, 400));
+			break;
+	}
+}
+
+function reset(){
+	node.el.style.left = '20px';
+	node.el.style.top = '100px';
+	node.el.style.width = '100px';
+	node.el.style.height = '100px';
+}
+
 </script>
 </head>
 
 <body>
 
-<button onClick="animate()">Go</button>
+<button onClick="reset()">Reset</button>
+<button onClick="animate(1)">Fade In</button>
+<button onClick="animate(2)">Fade Out</button>
+<button onClick="animate(3)">Highlight</button>
+<button onClick="animate(4)">Move</button>
+<button onClick="animate(5)">Scale</button>
 
 <div id="box"></div>
-
-<pre style="position:absolute; bottom:30px; right:80px; border:1px solid #CCC; padding:15px; width:705px; background-color:#FFFFFF; z-index:10">
-var fx = new FX('box', {
-	top: {to: rand(0, 300)},
-	left: {to: rand(0, 40), units: 'ex'},
-	width: {to: rand(10, 40), units: 'em'}, 
-	height: {to: rand(10, 60), units: '%'},
-	backgroundColor: {to: "rgb("+rand(0, 255)+", "+rand(0, 255)+", "+rand(0, 255)+")"}
-}, 1, easing[rand(0, easing.length - 1)]);
-
-fx.start();
-</pre>
 
 </body>
 </html>

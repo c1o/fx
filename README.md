@@ -5,15 +5,47 @@ FX
 
 * Perform tween on almost all CSS properties
 * Supports both scroll and color animations
-* Allows for both to and from values for each attribute
 * Supports transitional easing
 * Multi-unit support (px, em, ex, %, etc.)
-* Optionally assign a callback and context to execute the function in upon animation completion
+* Optionally assign a callback to invoke upon animation completion
+* Utility methods include isAnimating and stop
 * Supports IE6+, FF, Opera, Safari, and Chrome
 * No browser detection
 
-For more information regarding the latest version of FX, please visit the blog post located here:
-<http://ryanmorr.com/archives/fx-2-0-the-full-featured-animation-framework>
+	var fx = new FX('element', {
+		top: {to: 200},
+		left: {to: 200},
+		width: {from: 100, to: 200},
+		height: {from: 100, to: 200}
+	}, 1.3, 'easeOut', callback, this);
+	
+	fx.start();
+
+---
+
+FX.Node
+=====
+
+#### A drop-in plugin that makes it simple to create and queue animations for a single element ####
+
+* Queue Animations
+* Helpers methods include fadeIn, fadeOut, highlight, move, and scale
+* Utility methods include isAnimating and stop
+
+	var node = new FX.Node('element');
+	node.animate({		 
+		duration: 2,
+		transition: 'easeIn',
+		attributes: {
+			top: {to: 200},
+			left: {to: 200},
+			width: {from: 100, to: 200},
+			height: {from: 100, to: 200}
+		},
+		callback: function(){
+			alert('done!');		
+		}
+	});
 
 ### License ###
 

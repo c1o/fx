@@ -12,6 +12,8 @@ FX
 * Supports IE6+, FF, Opera, Safari, and Chrome
 * No browser detection
 
+#### Usage ####
+
 	var fx = new FX('element', {
 		top: {to: 200},
 		left: {to: 200},
@@ -21,8 +23,6 @@ FX
 	
 	fx.start();
 
----
-
 FX.Node
 =====
 
@@ -31,6 +31,8 @@ FX.Node
 * Queue Animations
 * Helpers methods include fadeIn, fadeOut, highlight, move, and scale
 * Utility methods include isAnimating and stop
+
+#### Usage ####
 
 	var node = new FX.Node('element');
 	node.animate({		 

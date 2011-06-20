@@ -10,6 +10,7 @@ FX
 * Optionally assign a callback to invoke upon animation completion
 * Utility methods include isAnimating and stop
 * Supports IE6+, FF, Opera, Safari, and Chrome
+* FX.Node plugin provides easy effects and an animation queue for single elements
 * No browser detection
 
 For more information regarding FX, please visit the blog post located here:
